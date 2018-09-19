@@ -9,6 +9,12 @@ import '../static/images/fontawesome/font-awesome.min.css'
 // collapse 展开折叠
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
 
+//引入全局axios
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios,axios);
+
 // 引用API文件
 import api from './api/index.js'
 // 将API方法绑定到全局
