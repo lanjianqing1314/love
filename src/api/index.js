@@ -1,5 +1,5 @@
-// 配置API接口地址
-var root = '/api/v1'
+// 配置API服务接口地址
+// var root = '/api/v1'
 // 引用axios
 var axios = require('axios')
 // 自定义判断元素类型JS
@@ -32,7 +32,7 @@ function filterNull (o) {
   另外，不同的项目的处理方法也是不一致的，这里出错就是简单的alert
 */
 
-function apiAxios (method, url, params, success, failure) {
+function apiAxios (method, baseURL, url, params, success, failure) {
   if (params) {
     params = filterNull(params)
   }
@@ -41,7 +41,7 @@ function apiAxios (method, url, params, success, failure) {
     url: url,
     data: method === 'POST' || method === 'PUT' ? params : null,
     params: method === 'GET' || method === 'DELETE' ? params : null,
-    baseURL: root,
+    baseURL: baseURL,
     withCredentials: false
   })
     .then(function (res) {
@@ -65,18 +65,18 @@ function apiAxios (method, url, params, success, failure) {
     })
 }
 
-// 返回在vue模板中的调用接口
+// 外部调用接口
 export default {
-  get: function (url, params, success, failure) {
-    return apiAxios('GET', url, params, success, failure)
+  get: function (baseURL, url, params, success, failure) {
+    return apiAxios('GET', baseURL, url, params, success, failure)
   },
-  post: function (url, params, success, failure) {
-    return apiAxios('POST', url, params, success, failure)
+  post: function (baseURL, url, params, success, failure) {
+    return apiAxios('POST', baseURL, url, params, success, failure)
   },
-  put: function (url, params, success, failure) {
-    return apiAxios('PUT', url, params, success, failure)
+  put: function (baseURL, url, params, success, failure) {
+    return apiAxios('PUT', baseURL, url, params, success, failure)
   },
-  delete: function (url, params, success, failure) {
-    return apiAxios('DELETE', url, params, success, failure)
+  delete: function (baseURL, url, params, success, failure) {
+    return apiAxios('DELETE', baseURL, url, params, success, failure)
   }
 }
