@@ -8,22 +8,26 @@ import 'element-ui/lib/theme-chalk/index.css'
 import '../static/images/fontawesome/font-awesome.min.css'
 // collapse 展开折叠
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
-
+// 引用API文件
+import service from './service/index.js'
 // 引用工具文件
 import utils from './utils/index.js'
-// 将工具方法绑定到全局
-Vue.prototype.$utils = utils
-
-//引入全局axios
+// 引入全局axios
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-Vue.use(VueAxios,axios);
+// 将工具方法绑定到全局
+Vue.prototype.$utils = utils
+
+Vue.use(VueAxios, axios)
 
 // 引用API文件
-import api from './api/index.js'
+// import api from './api/index.js'
 // 将API方法绑定到全局
-Vue.prototype.$api = api
+// Vue.prototype.$api = api
+
+// 将API方法绑定到全局
+Vue.prototype.$service = service
 
 Vue.use(ElementUI)
 
