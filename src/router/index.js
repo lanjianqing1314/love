@@ -1,21 +1,33 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import login from '@/view/login/index'
-import index from '@/view/index/index'
+import VueRouter from 'vue-router'
+import store from '@/store/store'
+import * as types from '@/store/types'
+import { routes } from '@/config/routes.config'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'index',
-      component: index
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: login
-    }
-  ]
+// 页面刷新时，重新赋值token
+if (window.localStorage.getItem('token')) {
+  store.commit(types.LOGIN, window.localStorage.getItem('token'))
+}
+
+const router = new VueRouter({
+  routes
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(r => r.meta.requireAuth)) {
+    if (store.state.token) {
+      next()
+    } else {
+      next({
+        path: '/login',
+        query: {redirect: to.fullPath}
+      })
+    }
+  } else {
+    next()
+  }
+})
+
+export default router

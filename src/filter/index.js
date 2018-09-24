@@ -1,7 +1,6 @@
-// 配置API服务接口地址
-// var root = '/api/v1'
 // 引用axios
-var axios = require('axios')
+// var axios = require('axios')
+import axios from '@/interceptor'
 // 自定义判断元素类型JS
 function toType (obj) {
   return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase()
@@ -42,7 +41,8 @@ function apiAxios (method, baseURL, url, params, success, failure) {
     data: method === 'POST' || method === 'PUT' ? params : null,
     params: method === 'GET' || method === 'DELETE' ? params : null,
     baseURL: baseURL,
-    withCredentials: false
+    withCredentials: false,
+    timeout: 5000
   })
     .then(function (res) {
       if (res.data.success === true) {

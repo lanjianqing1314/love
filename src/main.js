@@ -21,11 +21,6 @@ Vue.prototype.$utils = utils
 
 Vue.use(VueAxios, axios)
 
-// 引用API文件
-// import api from './api/index.js'
-// 将API方法绑定到全局
-// Vue.prototype.$api = api
-
 // 将API方法绑定到全局
 Vue.prototype.$service = service
 
