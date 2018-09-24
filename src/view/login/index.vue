@@ -61,7 +61,7 @@ export default {
   mounted () {
     debugger
     this.loginStyle.height = (window.innerHeight - 142) + 'px'
-    this.$service.reader.getTest(null, r => {
+    this.$api.reader.getTest(null, r => {
       console.log(r)
     })
   },

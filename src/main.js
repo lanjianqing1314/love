@@ -9,7 +9,7 @@ import '../static/images/fontawesome/font-awesome.min.css'
 // collapse 展开折叠
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
 // 引用API文件
-import service from './service/index.js'
+import api from './api/index.js'
 // 引用工具文件
 import utils from './utils/index.js'
 // 引入全局axios
@@ -22,7 +22,7 @@ Vue.prototype.$utils = utils
 Vue.use(VueAxios, axios)
 
 // 将API方法绑定到全局
-Vue.prototype.$service = service
+Vue.prototype.$api = api
 
 Vue.use(ElementUI)
 
