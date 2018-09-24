@@ -14,18 +14,22 @@
 │   ├── index.js                        // 配置主文件
 │   └── prod.env.js                     // 编译配置文件
 ├── src                                 // 我们的项目的源码编写文件
-│   ├── api                             // 接口调用工具文件夹
-│   │   └── index.js                    // 接口调用工具
-│   ├── components                      // 组件文件夹，目前为空
+│   ├── api                             // 接口调用文件夹
+│   │   ├── base                        // 基础接口文件夹(根据项目的大小可以扩展重构)
+│   │   ├── mapper                      // 基础接口前后台数据映射文件夹(根据项目的大小可以扩展重构)
+│   │   └── index.js                    // 组建总调用api文件
 │   ├── assets                          // 图片资源文件夹
 │   ├── config                          // 项目配置文件夹
-│   │   └── index.js                    // 项目配置文件
-│   ├── frame                           // 子路由文件夹
-│   │   └── frame.vue                   // 默认子路由文件
+│   │   └── routes.config.js            // 路由资源配置文件
+│   ├── filter                          // 过滤器文件夹
+│   │   └── index.js                    // 过滤器文件
+│   ├── interceptor                     // 拦截器器文件夹
+│   │   └── index.js                    // 拦截器文件
 │   ├── router                          // 路由配置文件夹
 │   │   └── index.js                    // 路由配置文件
-│   ├── service                         // 接口业务层文件，实现了一个前段多个后台的配置实现和前端与服务接口的解耦和
-│   │   └── baseService                 // 主后台接口文件
+│   ├── store                           // 状态管理文件夹
+│   │   ├── store.js                    // 状态管理文件
+│   │   └── stypes.js                   // 状态管理文件类别
 │   ├── style                           // scss 样式存放目录
 │   │   ├── base                        // 基础样式存放目录
 │   │   │   ├── _base.scss              // 基础样式文件
@@ -39,8 +43,6 @@
 │   ├── utils                           // 常用工具文件夹
 │   │   └── index.js                    // 常用工具文件
 │   ├── view                            // 我们的页面组件文件夹
-│   │   ├── content.vue                 // 准备些 cnodejs 的内容页面
-│   │   └── index.vue                   // 准备些 cnodejs 的列表页面
 │   ├── App.vue                         // APP入口文件
 │   └── main.js                         // 项目配置文件
 ├── static                              // 资源放置目录
