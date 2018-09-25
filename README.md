@@ -1,3 +1,22 @@
+## 项目说明
+
+```
+......
+```
+
+### 技术栈
+* Vue 2.0
+* vue-router
+* vuex
+* axios
+* vue-material
+* element-ui
+* echart
+
+## 项目结构
+
+```
+.
 ├── node_modules                        // 项目依赖包文件夹
 ├── build                               // 编译配置文件，一般不用管
 │   ├── build.js
@@ -10,7 +29,7 @@
 │   ├── webpack.dev.conf.js
 │   └── webpack.prod.conf.js
 ├── config                              // 项目基本设置文件夹
-│   ├── dev.env.js                      // 开发配置文件
+│   ├── dev.env.js                      // 配置文件
 │   ├── index.js                        // 配置主文件
 │   └── prod.env.js                     // 编译配置文件
 ├── src                                 // 我们的项目的源码编写文件
@@ -59,8 +78,9 @@
 ├── package-lock.json                   // npm5 新增文件，优化性能
 ├── package.json                        // 项目依赖包配置文件
 └── README.md                           // 项目说明文档
+```
 
-# rllove
+# 项目名称 rllove
 
 > A Vue.js project
 
@@ -89,6 +109,6 @@ npm run e2e
 npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+For a detailed explanation on how things work, check out the [guide](https://github.com/lanjianqing1314/love) and [docs for vue-loader](https://github.com/lanjianqing1314/love).
 
 
