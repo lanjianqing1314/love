@@ -1,12 +1,12 @@
-import Login from '@/view/login/index'
-import Index from '@/view/index/index'
-import Manager from '@/view/manager/index'
-
+/**
+ * 路由配置文件（模块使用异步加载）
+ * @author lanjianqing
+ */
 export const routes = [
   {
     path: '/',
     name: '/',
-    component: Index
+    component: (resolve) => require(['@/view/index/index'], resolve)
   },
   {
     path: '/manager',
@@ -14,11 +14,11 @@ export const routes = [
     meta: {
       requireAuth: true
     },
-    component: Manager
+    component: (resolve) => require(['@/view/manager/index'], resolve)
   },
   {
     path: '/login',
     name: 'login',
-    component: Login
+    component: (resolve) => require(['@/view/login/index'], resolve)
   }
 ]
